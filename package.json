@@ -2,6 +2,7 @@
     "name": "presentationmode",
     "displayName": "presentationMode",
     "description": "Show your code properly in a presentation",
+    "icon": "logo.png",
     "version": "0.0.1",
     "publisher": "jspolancor",
     "engines": {
@@ -10,7 +11,10 @@
     "categories": [
         "Other"
     ],
-    "repository": "https://github.com/jspolancor/presentation-mode.git",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jspolancor/presentation-mode.git"
+    },
     "keywords": [
         "presentation",
         "mode",

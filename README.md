@@ -1,3 +1,7 @@
-# presentationmode README
+# Presentation mode
 
-Presentation mode command
+A simple plugin to show your code properly in a presentation
+
+## Usage
+
+![Screenshot](demo.gif)
