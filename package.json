@@ -3,7 +3,7 @@
     "displayName": "presentationMode",
     "description": "Show your code properly in a presentation",
     "icon": "logo.png",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "jspolancor",
     "engines": {
         "vscode": "^1.21.0"
