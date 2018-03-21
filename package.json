@@ -3,7 +3,7 @@
     "displayName": "Presentation Mode",
     "description": "Show your code properly in a presentation",
     "icon": "logo.png",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "author": "Juan Sebastian Polanco",
     "publisher": "jspolancor",
     "license": "MIT",
@@ -37,7 +37,7 @@
         "keybindings": [{
             "command": "extension.presentationModeExit",
             "key": "escape",
-            "when": "editorTextFocus && inZenMode"
+            "when": "inZenMode"
         }]
     },
     "scripts": {
