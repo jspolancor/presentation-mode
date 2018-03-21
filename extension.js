@@ -13,11 +13,19 @@ function activate(context) {
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with  registerCommand
     // The commandId parameter must match the command field in package.json
-    let disposable = vscode.commands.registerCommand('extension.sayHello', function () {
+    let defaultZoomLevel = vscode.workspace.getConfiguration('').get('window.zoomLevel');
+    let isPresentationMode = false;
+    let disposable = vscode.commands.registerCommand('extension.presentationMode', function () {
         // The code you place here will be executed every time your command is executed
-
-        // Display a message box to the user
-        vscode.window.showInformationMessage('Hello World!');
+        
+        vscode.commands.executeCommand('workbench.action.toggleZenMode');
+        if(isPresentationMode){
+            vscode.workspace.getConfiguration('').update('window.zoomLevel', defaultZoomLevel, true);
+        }else{
+            vscode.workspace.getConfiguration('').update('window.zoomLevel', 4, true);
+        }        
+        isPresentationMode = !isPresentationMode;
+        
     });
 
     context.subscriptions.push(disposable);

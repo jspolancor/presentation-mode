@@ -10,15 +10,21 @@
     "categories": [
         "Other"
     ],
+    "keywords": [
+        "presentation",
+        "mode",
+        "presentation mode",
+        "live"
+    ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onCommand:extension.presentationMode"
     ],
     "main": "./extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.sayHello",
-                "title": "Hello World"
+                "command": "extension.presentationMode",
+                "title": "Presentation mode"
             }
         ]
     },
