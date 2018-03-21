@@ -3,8 +3,10 @@
     "displayName": "Presentation Mode",
     "description": "Show your code properly in a presentation",
     "icon": "logo.png",
-    "version": "1.0.0",
+    "version": "1.0.1",
+    "author": "Juan Sebastian Polanco",
     "publisher": "jspolancor",
+    "license": "MIT",
     "engines": {
         "vscode": "^1.21.0"
     },
