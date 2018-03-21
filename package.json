@@ -1,6 +1,6 @@
 {
     "name": "presentationmode",
-    "displayName": "presentationMode",
+    "displayName": "Presentation Mode",
     "description": "Show your code properly in a presentation",
     "icon": "logo.png",
     "version": "0.0.2",
@@ -31,7 +31,12 @@
                 "command": "extension.presentationMode",
                 "title": "Presentation mode"
             }
-        ]
+        ],
+        "keybindings": [{
+            "command": "extension.presentationModeExit",
+            "key": "escape",
+            "when": "editorTextFocus && inZenMode"
+        }]
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",

@@ -8,27 +8,33 @@ function activate(context) {
 
     // Use the console to output diagnostic information (console.log) and errors (console.error)
     // This line of code will only be executed once when your extension is activated
-    console.log('Congratulations, your extension "presentationmode" is now active!');
+    console.log('Congratulations, your extension "presentation mode" is now active!');
 
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with  registerCommand
     // The commandId parameter must match the command field in package.json
     let defaultZoomLevel = vscode.workspace.getConfiguration('').get('window.zoomLevel');
-    let isPresentationMode = false;
+    let isPresentationMode = false;    
+    const zoomLevelInPresentationMode = 4;
     let disposable = vscode.commands.registerCommand('extension.presentationMode', function () {
-        // The code you place here will be executed every time your command is executed
-        
+        // The code you place here will be executed every time your command is executed                
         vscode.commands.executeCommand('workbench.action.toggleZenMode');
         if(isPresentationMode){
-            vscode.workspace.getConfiguration('').update('window.zoomLevel', defaultZoomLevel, true);
-        }else{
-            vscode.workspace.getConfiguration('').update('window.zoomLevel', 4, true);
+            vscode.workspace.getConfiguration('').update('window.zoomLevel', defaultZoomLevel, true);            
+        }else {
+            vscode.workspace.getConfiguration('').update('window.zoomLevel', zoomLevelInPresentationMode, true);            
         }        
         isPresentationMode = !isPresentationMode;
-        
+    });
+
+    let exitPresentationMode = vscode.commands.registerCommand('extension.presentationModeExit', function () {
+        vscode.commands.executeCommand('workbench.action.toggleZenMode');                
+        vscode.workspace.getConfiguration('').update('window.zoomLevel', defaultZoomLevel, true);
+        isPresentationMode = false;
     });
 
     context.subscriptions.push(disposable);
+    context.subscriptions.push(exitPresentationMode);
 }
 exports.activate = activate;
 
