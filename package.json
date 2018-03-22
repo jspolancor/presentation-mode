@@ -3,7 +3,7 @@
     "displayName": "Presentation Mode",
     "description": "Show your code properly in a presentation",
     "icon": "logo.png",
-    "version": "1.0.2",
+    "version": "1.1.2",
     "author": "Juan Sebastian Polanco",
     "publisher": "jspolancor",
     "license": "MIT",
@@ -38,7 +38,18 @@
             "command": "extension.presentationModeExit",
             "key": "escape",
             "when": "inZenMode"
-        }]
+        }],
+        "configuration": {
+            "type": "object",
+            "title": "Presentation mode config",
+            "properties":{
+                "presentationMode.zoomLevel": {
+                    "type": "integer",
+                    "default": 4,
+                    "description": "The zoom level in presentation mode"
+                }
+            }
+        }
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",

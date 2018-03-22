@@ -13,10 +13,11 @@ function activate(context) {
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with  registerCommand
     // The commandId parameter must match the command field in package.json
-    let defaultZoomLevel = vscode.workspace.getConfiguration('').get('window.zoomLevel');
+    
+    let defaultZoomLevel = vscode.workspace.getConfiguration('').get('window.zoomLevel');            
     let isPresentationMode = false;    
-    const zoomLevelInPresentationMode = 4;
     let disposable = vscode.commands.registerCommand('extension.presentationMode', function () {
+        let zoomLevelInPresentationMode = vscode.workspace.getConfiguration('').get('presentationMode.zoomLevel');
         // The code you place here will be executed every time your command is executed                
         vscode.commands.executeCommand('workbench.action.toggleZenMode');
         if(isPresentationMode){
