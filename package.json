@@ -21,7 +21,8 @@
         "presentation",
         "mode",
         "presentation mode",
-        "live"
+        "live",
+        "presentationmode"
     ],
     "activationEvents": [
         "onCommand:extension.presentationMode"
@@ -37,7 +38,7 @@
         "keybindings": [{
             "command": "extension.presentationModeExit",
             "key": "escape",
-            "when": "inZenMode"
+            "when": "inPresentationMode"
         }],
         "configuration": {
             "type": "object",

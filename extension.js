@@ -21,8 +21,10 @@ function activate(context) {
         // The code you place here will be executed every time your command is executed                
         vscode.commands.executeCommand('workbench.action.toggleZenMode');
         if(isPresentationMode){
+            vscode.commands.executeCommand('setContext', 'inPresentationMode', false);
             vscode.workspace.getConfiguration('').update('window.zoomLevel', defaultZoomLevel, true);            
         }else {
+            vscode.commands.executeCommand('setContext', 'inPresentationMode', true);
             vscode.workspace.getConfiguration('').update('window.zoomLevel', zoomLevelInPresentationMode, true);            
         }        
         isPresentationMode = !isPresentationMode;
@@ -31,11 +33,12 @@ function activate(context) {
     let exitPresentationMode = vscode.commands.registerCommand('extension.presentationModeExit', function () {
         vscode.commands.executeCommand('workbench.action.toggleZenMode');                
         vscode.workspace.getConfiguration('').update('window.zoomLevel', defaultZoomLevel, true);
+        vscode.commands.executeCommand('setContext', 'inPresentationMode', false);
         isPresentationMode = false;
     });
 
     context.subscriptions.push(disposable);
-    context.subscriptions.push(exitPresentationMode);
+    context.subscriptions.push(exitPresentationMode);    
 }
 exports.activate = activate;
 
