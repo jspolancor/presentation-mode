@@ -23,3 +23,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Proper changelog
 
+## [1.1.3]
+### Fixed
+- Toast notification on esc in zen mode
