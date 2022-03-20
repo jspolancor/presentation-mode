@@ -37,7 +37,7 @@
         ],
         "keybindings": [{
             "command": "extension.presentationModeExit",
-            "key": "escape",
+            "key": "escape escape",
             "when": "inPresentationMode"
         }],
         "configuration": {
